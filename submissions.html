@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipts</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <style>
+        .well {
+            border: 2px solid #ddd;
+            box-shadow: 3px 3px 15px #888888;
+            background-color: #f0f0f5;
+            padding: 40px;
+            width: 800px;
+            margin: 20px auto;
+        }
+        .header-text {
+            font-family: 'Arial', sans-serif;
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            color: #4A4E69;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+        .info-text {
+            font-family: 'Verdana', sans-serif;
+            font-size: 18px;
+            color: #22223b;
+        }
+        .info-text strong {
+            color: #4A4E69;
+        }
+        .amount-text {
+            font-family: 'Arial', sans-serif;
+            font-size: 26px;
+            font-weight: bold;
+            color: #F2A65A;
+            text-align: center;
+            margin-top: 40px;
+        }
+        hr {
+            border-top: 1px solid #ddd;
+            margin: 20px 0;
+        }
+        .row {
+            margin-bottom: 20px;
+        }
+        .col-xs-6 {
+            width: 50%;
+            display: inline-block;
+        }
+        .text-right {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align: center;">Receipts</h1>
+
+    <!-- Loop through each submission and create a receipt for each one -->
+    {% for submission in submissions %}
+    <div class="container">
+        <div class="row">
+            <div class="well">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p class="header-text">Receipt</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-6 info-text">
+                        <p><strong>Receipt No:</strong> {{ submission._id }}</p>
+                    </div>
+                    <div class="col-xs-6 text-right info-text">
+                        <p><strong>Date:</strong> {{ submission.date_created or "N/A" }}</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 info-text">
+                        <hr>
+                        <p><strong>Username:</strong> {{ submission.username }}</p>
+                        <p><strong>Email:</strong> {{ submission.email }}</p>
+                        <p><strong>Mobile Number:</strong> {{ submission.mobile }}</p>
+                        <hr>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p class="amount-text">Amount Paid: ${{ submission.payment }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    {% if submissions|length == 0 %}
+    <p>No submissions found.</p>
+    {% endif %}
+    
+</body>
+</html>

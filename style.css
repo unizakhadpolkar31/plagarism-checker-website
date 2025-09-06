@@ -1,0 +1,491 @@
+/* General Reset and Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #DFD0B8; /* New main background color */
+    color: #000000; /* Neutral text color */
+    line-height: 1.6;
+}
+
+/* Header */
+.header {
+    background-color: #153448; /* New dark background color */
+    color: #ffffff; /* White text color */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-bottom: 4px solid #948979; /* New border color */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header:hover {
+    background-color: #3C5B6F; /* New hover background color */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #153448; /* New dark background color */
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav:hover {
+    background-color: #3C5B6F; /* New hover background color */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+nav img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-list li a {
+    color: #DFD0B8; /* New text color */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.nav-list li a:hover {
+    color: #153448; /* New hover text color */
+    background-color: #948979; /* New hover background color */
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('C:\Users\uniza\website design\home.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff; /* White text color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.hero:hover {
+    box-shadow: inset 0 0 70px rgba(0, 0, 0, 0.4);
+    transform: scale(1.02);
+}
+
+/* Home Section */
+.home {
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff; /* White text color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.home:hover {
+    box-shadow: inset 0 0 70px rgba(0, 0, 0, 0.4);
+    transform: scale(1.02);
+}
+
+/* Main Content */
+.main-content {
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: #DFD0B8; /* New background color */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.main-content h1 {
+    font-size: 36px;
+    color: #153448; /* New text color */
+    margin-bottom: 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.main-content h1:hover {
+    transform: scale(1.1);
+    color: #3C5B6F; /* New hover text color */
+}
+
+.btn {
+    padding: 15px 30px;
+    background-color: #948979; /* New background color */
+    color: #153448; /* New text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 18px;
+}
+
+.btn:hover {
+    background-color: #3C5B6F; /* New hover background color */
+    color: #ffffff; /* White text color */
+    transform: scale(1.05);
+}
+
+/* Services Section */
+#services {
+    padding: 70px 0;
+    background-color: #3C5B6F; /* New background color */
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#services .container {
+    text-align: center;
+}
+
+#services h1 {
+    font-size: 32px;
+    color: #153448; /* New text color */
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+#services h1:hover {
+    color: #948979; /* New hover text color */
+}
+
+.line {
+    width: 100px;
+    height: 4px;
+    background-color: #948979; /* New line color */
+    margin: 0 auto 30px;
+    border-radius: 2px;
+}
+
+.services {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.service {
+    background-color: #ffffff; /* Neutral background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    min-height: 450px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .service img {
+        height: 200px;
+    }
+}
+
+.service img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service h3 {
+    font-size: 24px;
+    color: #153448; /* New text color */
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.service h3:hover {
+    color: #948979; /* New hover text color */
+}
+
+.service p {
+    color: #666666; /* Neutral text color */
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service:hover p {
+    color: #333333; /* Slightly darker text */
+}
+
+/* About Us Section */
+#about-us {
+    background-color: #DFD0B8; /* New background color */
+    padding: 100px 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+    transition: background-color 0.3s ease;
+}
+
+#about-us:hover {
+    background-color: #948979; /* New hover background color */
+}
+
+.about-content, .about-image {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.about-content {
+    width: 60%;
+    padding-right: 20px;
+}
+
+.about-image {
+    width: 35%;
+    padding-left: 20px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Login Section */
+#login {
+    background-color: #DFD0B8; /* New background color */
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#login:hover {
+    background-color: #D0B0A0; /* Slightly darker background */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+#login h2 {
+    color: #3C5B6F; /* New text color */
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px; /* Increased font size */
+    transition: color 0.3s ease;
+}
+
+#login h2:hover {
+    color: #153448; /* New hover text color */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px; /* Slightly increased margin */
+    color: #3C5B6F; /* New text color */
+    font-size: 18px; /* Increased font size */
+    transition: color 0.3s ease;
+}
+
+.form-group label:hover {
+    color: #153448; /* New hover text color */
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px; /* Increased padding */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px; /* Increased font size */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #3C5B6F; /* New focus border color */
+    outline: none;
+    box-shadow: 0 0 8px rgba(60, 91, 111, 0.3);
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #3C5B6F; /* New background color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px; /* Increased font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #153448; /* New hover background color */
+    transform: scale(1.05);
+}
+
+/* Receipt Section */
+.receipt {
+    margin-top: 20px;
+    background-color: #f1f1f1; /* Light gray background */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.receipt:hover {
+    background-color: #e0e0e0; /* Slightly darker gray */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.receipt h3 {
+    color: #3C5B6F; /* New text color */
+    transition: color 0.3s ease;
+}
+
+.receipt h3:hover {
+    color: #153448; /* New hover text color */
+}
+
+.receipt p {
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.receipt:hover p {
+    color: #333;
+}
+
+/* QR Code */
+.qr-code {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.qr-code img {
+    border: 2px solid #3C5B6F; /* New border color */
+    border-radius: 5px;
+    padding: 10px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.qr-code img:hover {
+    transform: scale(1.05);
+    border-color: #153448; /* New hover border color */
+}
+
+/* Contact Section */
+#contact {
+    padding: 100px 50px;
+    background-color: #DFD0B8; /* New background color */
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+#contact h1 {
+    font-size: 32px;
+    color: #153448; /* New text color */
+    margin-bottom: 20px;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+#contact h1:hover {
+    color: #948979; /* New hover text color */
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-info div {
+    width: 30%;
+    background-color: #ffffff; /* Neutral background */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-info div:hover {
+    background-color: #948979; /* New hover background color */
+    transform: translateY(-5px);
+}
+
+.contact-info div i {
+    color: #153448; /* New icon color */
+    font-size: 40px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.contact-info div h3 {
+    font-size: 24px;
+    color: #153448; /* New text color */
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.contact-info div h3:hover {
+    color: #948979; /* New hover text color */
+}
+
+.contact-info div p {
+    font-size: 16px;
+    color: #666666; /* Neutral text color */
+}
+
+

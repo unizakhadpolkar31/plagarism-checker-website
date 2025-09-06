@@ -1,0 +1,105 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<style>
+    /* Bigger and more prominent receipt styling with new color scheme */
+    .well {
+        border: 2px solid #ddd;
+        box-shadow: 3px 3px 15px #888888;
+        background-color: #f0f0f5; /* Light background color */
+        padding: 40px;
+        width: 800px;
+        margin: 20px auto; /* Center the receipt */
+    }
+
+    .header-text {
+        font-family: 'Arial', sans-serif;
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+        color: #4A4E69; /* Updated header color */
+        margin-bottom: 40px;
+        text-transform: uppercase;
+    }
+
+    .info-text {
+        font-family: 'Verdana', sans-serif;
+        font-size: 18px;
+        color: #22223b; /* Updated text color */
+    }
+
+    .info-text strong {
+        color: #4A4E69; /* Updated strong text color */
+    }
+
+    .amount-text {
+        font-family: 'Arial', sans-serif;
+        font-size: 26px;
+        font-weight: bold;
+        color: #F2A65A; /* Soft highlight color */
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    hr {
+        border-top: 1px solid #ddd;
+        margin: 20px 0;
+    }
+
+    /* Additional style to make receipt visually balanced */
+    .row {
+        margin-bottom: 20px;
+    }
+
+    .col-xs-6 {
+        width: 50%;
+        display: inline-block;
+    }
+
+    .text-right {
+        text-align: right;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="well">
+            <!-- Centered Receipt Heading -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <p class="header-text">Receipt</p>
+                </div>
+            </div>
+
+            <!-- Receipt Number and Date Section -->
+            <div class="row">
+                <div class="col-xs-6 info-text">
+                    <p><strong>Receipt No:</strong> </p>
+                </div>
+                <div class="col-xs-6 text-right info-text">
+                    <p><strong>Date:</strong> </p>
+                </div>
+            </div>
+
+            <!-- Username, Email, Mobile Number Section -->
+            <div class="row">
+                <div class="col-xs-12 info-text">
+                    <hr>
+                    <p><strong>Username:</strong> </p>
+                    <p><strong>Email:</strong> </p>
+                    <p><strong>Mobile Number:</strong> </p>
+                    <hr>
+                </div>
+            </div>
+
+            <!-- Amount Paid Section -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <p class="amount-text">Amount Paid: </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

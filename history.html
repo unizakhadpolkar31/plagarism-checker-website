@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History of Submissions</title>
+    <link rel="stylesheet" href="styleh.css">
+</head>
+<body>
+    <h1>History of Submissions</h1>
+    {% if submissions %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>Hours</th>
+                    <th>Pages</th>
+                    <th>Education</th>
+                    <th>PDF Path</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for submission in submissions %}
+                    <tr>
+                        <td>{{ submission.username }}</td>
+                        <td>{{ submission.email }}</td>
+                        <td>{{ submission.mobile }}</td>
+                        <td>{{ submission.hours }}</td>
+                        <td>{{ submission.pages }}</td>
+                        <td>{{ submission.education }}</td>
+                        <td><a href="{{ submission.pdf_path }}">View PDF</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No submissions found.</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Design For VTC Chiplun</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function calculatePayment() {
+            var pageRate = 10; // Example rate per page
+            var pages = document.getElementById('pages').value;
+            var totalAmount = pages * pageRate;
+
+            document.getElementById('paymentAmount').textContent = '$' + totalAmount;
+        }
+
+        window.onload = function() {
+            // Set up event listeners
+            document.getElementById('pages').addEventListener('change', calculatePayment);
+        };
+    </script>
+</head>
+<body>
+    <section id="main">
+        <div class="container">
+            <nav>
+                <img src="" alt="" class="">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="about-us.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="admin-login.html">admin-login</a></li>
+                    <li><a href="admin-dashboard.html">admin-dashboard</a></li>
+
+
+
+                </ul>   
+            </nav>
+            <div class="main-content">
+                <h1 class="intro-heading">Welcome to Our Website</h1>
+                <h1 class="main-heading">Your Path To Originality</h1>
+                <button class="btn btn-primary">Get Started</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h1>Our Services</h1>
+            <div class="line"></div>
+        </div>
+        <div class="services">
+            <div class="service">
+                <img src="service.jpg" alt="Plagiarism Checker" />
+                <h3>Plagiarism Checker</h3>
+                <p>Ensure Academic and Professional Integrity with Accurate Plagiarism Detection</p>
+            </div>
+
+            <div class="service">
+                <img src="service2.jpg" alt="Plagiarism Remover" />
+                <h3>Plagiarism Remover</h3>
+                <p>Clean Up Your Content: Reliable Plagiarism Remover for Original Work</p>
+            </div>
+
+            <div class="service">
+                <img src="gramer.png" alt="Grammar Check" />
+                <h3>Grammar Check</h3>
+                <p>Achieve Flawless Communication with Accurate Grammar Correction</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about-us">
+        <div class="container">
+            <div class="about-content">
+                <h4>About Us</h4>
+                <h1>Who We Are: Your Trusted Partner in Ensuring Original Content</h1>
+                <p>We focus on helping you create content that’s truly your own. Our easy-to-use plagiarism checker finds and removes copied content so you can be confident that your work is original. Whether you're a student, teacher, or professional, we offer reliable tools that make sure your writing is free of plagiarism. Our goal is to make it simple for you to check your work and ensure it’s 100% original.</p>
+                <button class="btn btn-primary">Learn More</button>
+            </div>
+            <div class="about-image">
+                <img src="about2.jpg" alt="About Us" />
+            </div>
+        </div>
+    </section>
+
+    <section id="login">
+        <div class="container">
+            <h2>Login</h2>
+            <form id="loginForm" action="http://127.0.0.1:3000" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email ID:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile No (WhatsApp):</label>
+                    <input type="tel" id="mobile" name="mobile" required>
+                </div>
+                <div class="form-group">
+                    <label for="pdf">Upload PDF:</label>
+                    <input type="file" id="pdf" name="pdf" accept=".pdf" required>
+                </div>
+                <div class="form-group">
+                    <label for="hours">Hours to Get PDF:</label>
+                    <select id="hours" name="hours" required>
+                        <option>select</option>
+                        <option value="6">6</option>
+                        <option value="12">12</option>
+                        <option value="24">24</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="pages">Number of Pages:</label>
+                    <select id="pages" name="pages" required>
+                        <option>select</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                        <option value="150">150</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="education">Educational Level:</label>
+                    <select id="education" name="education" required>
+                        <option>select</option>
+                        <option value="ug">UG</option>
+                        <option value="pg">PG</option>
+                        <option value="phd">PhD</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Estimated Payment Amount:</label>
+                    <p id="paymentAmount">₹0</p>
+                </div>
+                <div class="qr-code">
+                    <label>QR Code:</label>
+                    <img src="https://via.placeholder.com/100" alt="QR Code" width="100">
+                </div>
+                 <div class="form-group">
+                    <label for="payment">Upload Payment Screenshot:</label>
+                    <input type="file" id="payment" name="payment" accept=".pdf" required>
+                </div> 
+                <button type="submit">Submit</button>
+            </form>
+            <div class="receipt">
+                <h3>Receipt</h3>
+                <p>Thank you for your submission!</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        
+        <section id="contact">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <div class="line"></div>
+                <form action="submit_contact.php" method="post">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" onclick="submitForm()">Send Message</button>
+                </form>
+            </div>
+        </section>
+            <p>&copy; 2024 VTC Chiplun. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+<script>
+    function submitForm() {
+        const formData = new FormData(document.getElementById('loginForm'));
+
+        fetch('http://127.0.0.1:3000/submit_form', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json()) // Ensure Flask returns JSON
+        .then(result => {
+            if (result.success) {
+                alert(result.message); // Show success message from server
+                document.getElementById('loginForm').reset(); // Clear form
+            } else {
+                alert('Error: ' + result.message); // Handle error
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while submitting the form.');
+        });
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default submission
+        submitForm(); // Call submit function
+    });
+</script>
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from submitting normally
+
+        const formData = new FormData(this);
+
+        fetch('http://127.0.0.1:3000/submit_form', {  // Update this URL to match Flask server
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())  // Parse the JSON from the response
+        .then(data => {
+            if (data.success) {
+                // Store form data in localStorage
+                localStorage.setItem('formData', JSON.stringify({
+                    username: document.getElementById('username').value,
+                    email: document.getElementById('email').value,
+                    mobile: document.getElementById('mobile').value,
+                    hours: document.getElementById('hours').value,
+                    pages: document.getElementById('pages').value,
+                    education: document.getElementById('education').value
+                }));
+
+                document.querySelector('.receipt').style.display = 'none';  // Hide receipt initially
+                document.getElementById('viewReceipt').style.display = 'block';  // Show "View Receipt" button
+                alert('Form submitted successfully!');
+            } else {
+                alert(`Form submission failed: ${data.error || 'Unknown error'}`);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.');
+        });
+    });
+
+    // Event listener for "View Receipt" button
+    document.getElementById('viewReceipt').addEventListener('click', function() {
+        const storedData = JSON.parse(localStorage.getItem('formData'));
+
+        if (storedData) {
+            // Display stored data in the receipt
+            const receiptContent = `
+                Username: ${storedData.username}<br>
+                Email: ${storedData.email}<br>
+                Mobile: ${storedData.mobile}<br>
+                Hours to Get PDF: ${storedData.hours}<br>
+                Number of Pages: ${storedData.pages}<br>
+                Educational Level: ${storedData.education}
+            `;
+            document.getElementById('receiptContent').innerHTML = receiptContent;
+            document.querySelector('.receipt').style.display = 'block';  // Show receipt
+        } else {
+            alert('No data found. Please submit the form first.');
+        }
+    });
+ </script>
+
+
+</html>

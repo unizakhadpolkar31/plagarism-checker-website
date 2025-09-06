@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - VTC Chiplun</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>   
+    </nav>
+    <section id="login">
+        <div class="container">
+            <h2>Login</h2>
+            <form id="loginForm" action="http://127.0.0.1:3000/submit_form" method="post" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email ID:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile No (WhatsApp):</label>
+                    <input type="tel" id="mobile" name="mobile" required>
+                </div>
+                <div class="form-group">
+                    <label for="pdf">Upload PDF:</label>
+                    <input type="file" id="pdf" name="pdf" accept=".pdf" required>
+                </div>
+                <div class="form-group">
+                    <label for="hours">Hours to Get PDF:</label>
+                    <select id="hours" name="hours" required>
+                        <option value="6">6</option>
+                        <option value="12">12</option>
+                        <option value="24">24</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="pages">Number of Pages:</label>
+                    <select id="pages" name="pages" required>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                        <option value="150">150</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="education">Educational Level:</label>
+                    <select id="education" name="education" required>
+                        <option value="ug">UG</option>
+                        <option value="pg">PG</option>
+                        <option value="phd">PhD</option>
+                    </select>
+                </div>
+                <div class="qr-code">
+                    <label>QR Code:</label>
+                    <img src="https://via.placeholder.com/100" alt="QR Code" width="100">
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+
+            <button id="viewReceipt" style="display:none;">View Receipt</button>
+            
+            <div class="receipt" style="display:none;">
+                <h3>Receipt</h3>
+                <p id="receiptContent"></p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+       document.getElementById('loginForm').addEventListener('submit', function(event) {
+           event.preventDefault(); // Prevent form from submitting normally
+
+           const formData = new FormData(this);
+
+           fetch('http://127.0.0.1:3000/submit_form', {  // Update this URL to match Flask server
+               method: 'POST',
+               body: formData
+           })
+           .then(response => response.json())  // Parse the JSON from the response
+           .then(data => {
+               if (data.success) {
+                   // Store form data in localStorage
+                   localStorage.setItem('formData', JSON.stringify({
+                       username: document.getElementById('username').value,
+                       email: document.getElementById('email').value,
+                       mobile: document.getElementById('mobile').value,
+                       hours: document.getElementById('hours').value,
+                       pages: document.getElementById('pages').value,
+                       education: document.getElementById('education').value
+                   }));
+
+                   document.querySelector('.receipt').style.display = 'none';  // Hide receipt initially
+                   document.getElementById('viewReceipt').style.display = 'block';  // Show "View Receipt" button
+                   alert('Form submitted successfully!');
+               } else {
+                   alert(`Form submission failed: ${data.error || 'Unknown error'}`);
+               }
+           })
+           .catch(error => {
+               console.error('Error:', error);
+               alert('An error occurred. Please try again.');
+           });
+       });
+
+       // Event listener for "View Receipt" button
+       document.getElementById('viewReceipt').addEventListener('click', function() {
+           const storedData = JSON.parse(localStorage.getItem('formData'));
+
+           if (storedData) {
+               // Display stored data in the receipt
+               const receiptContent = `
+                   Username: ${storedData.username}<br>
+                   Email: ${storedData.email}<br>
+                   Mobile: ${storedData.mobile}<br>
+                   Hours to Get PDF: ${storedData.hours}<br>
+                   Number of Pages: ${storedData.pages}<br>
+                   Educational Level: ${storedData.education}
+               `;
+               document.getElementById('receiptContent').innerHTML = receiptContent;
+               document.querySelector('.receipt').style.display = 'block';  // Show receipt
+           } else {
+               alert('No data found. Please submit the form first.');
+           }
+       });
+    </script>
+</body>
+</html>

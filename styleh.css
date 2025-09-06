@@ -1,0 +1,76 @@
+/* General Reset and Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #DFD0B8; /* Background color */
+    color: #000000; /* Neutral text color */
+    line-height: 1.6;
+}
+
+/* Header */
+h2 {
+    text-align: center;
+    margin: 20px 0;
+    color: #3C5B6F; /* Title color */
+}
+
+/* Order History Section */
+#history {
+    max-width: 800px; /* Limit width for better readability */
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+    background-color: #ffffff; /* White background for history */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Individual Order */
+#history > div {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #3C5B6F; /* Border color */
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+#history > div:hover {
+    background-color: #f1f1f1; /* Hover background color */
+}
+
+/* Customer Info */
+h3 {
+    color: #3C5B6F; /* Customer name color */
+    margin-bottom: 10px;
+}
+
+/* Product List */
+ul {
+    list-style-type: none; /* Remove bullet points */
+    padding-left: 20px; /* Indent list */
+}
+
+li {
+    margin-bottom: 8px; /* Space between items */
+    color: #666666; /* Neutral text color */
+    transition: color 0.3s ease;
+}
+
+li:hover {
+    color: #3C5B6F; /* Change text color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #history {
+        padding: 10px; /* Reduce padding on smaller screens */
+    }
+
+    h2 {
+        font-size: 24px; /* Smaller title font size */
+    }
+}
